@@ -75,7 +75,8 @@
             <field name="view_mode">tree,form</field>
             <field name="domain">[('user_id','=',uid),('state','=','open')]</field>
             <field name="context">{}</field>
-            <field name="view_id" ref="project.view_task_search_form"/>
+            <field name="view_id" ref="project.view_task_tree2"/>
+            <field name="search_view_id" ref="project.view_task_search_form"/>
         </record>
 
         <record id="ceo_my_delegated_tasks" model="ir.actions.act_window">
@@ -86,6 +87,7 @@
             <field name="domain">[('parent_ids.user_id','=',uid),('state', 'in', ('draft','open','pending'))]</field>
             <field name="context">{}</field>
             <field name="view_id" ref="project.view_task_tree2"/>
+            <field name="search_view_id" ref="project.view_task_search_form"/>
         </record>
 
         <record id="ceo_other_tasks" model="ir.actions.act_window">
@@ -96,26 +98,29 @@
             <field name="domain">[('user_id','in',(uid,False)),('state','in',('draft','pending'))]</field>
             <field name="context">{}</field>
             <field name="view_id" ref="project.view_task_tree2"/>
+            <field name="search_view_id" ref="project.view_task_search_form"/>
         </record>
 
         <record id="ceo_closed_tasks" model="ir.actions.act_window">
-            <field name="name">Finished tasks</field>
+            <field name="name">All Finished tasks</field>
             <field name="res_model">project.task</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
             <field name="domain">[('state','=',('done'))]</field>
             <field name="context">{}</field>
             <field name="view_id" ref="project.view_task_tree2"/>
+            <field name="search_view_id" ref="project.view_task_search_form"/>
         </record>
 
-        <record id="ceo_unassigned_tasks" model="ir.actions.act_window">
-            <field name="name">Unassigned Tasks</field>
+        <record id="ceo_tasks" model="ir.actions.act_window">
+            <field name="name">All unfinished tasks</field>
             <field name="res_model">project.task</field>
             <field name="view_type">form</field>
-            <field name="view_mode">tree,form,calendar,graph,kanban</field>
-            <field name="domain">[('user_id','=',False)]</field>
+            <field name="view_mode">tree,form,gantt,kanban,calendar</field>
+            <field name="domain">[('state', 'in', ('draft','open','pending'))]</field>
             <field name="context">{}</field>
-            <field name="view_id" ref="project.view_task_search_form"/>
+            <field name="view_id" ref="project.view_task_tree2"/>
+            <field name="search_view_id" ref="project.view_task_search_form"/>
         </record>
 
         <record id="ceo_projects" model="ir.actions.act_window">
@@ -199,7 +204,7 @@
                 <menuitem action="ceo_my_delegated_tasks" id="menu_delegated_tasks" parent="menu_ceo_taskmenu" sequence="2"/>
                 <menuitem action="ceo_other_tasks" id="menu_other_tasks" parent="menu_ceo_taskmenu" sequence="3"/>
                 <menuitem action="ceo_closed_tasks" id="menu_closed_tasks" parent="menu_ceo_taskmenu" sequence="4"/>
-
+                <menuitem action="ceo_tasks" id="menu_all_tasks" parent="menu_ceo_taskmenu" sequence="5"/>
 
     </data>
 </openerp>

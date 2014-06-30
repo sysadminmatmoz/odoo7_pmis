@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenERP Server 7.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-06-28 13:12+0000\n"
-"PO-Revision-Date: 2014-06-28 15:20+0100\n"
+"POT-Creation-Date: 2014-06-30 05:31+0000\n"
+"PO-Revision-Date: 2014-06-30 07:33+0100\n"
 "Last-Translator: Matjaž Mozetič <m.mozetic@matmoz.si>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,6 +16,18 @@ msgstr ""
 "Plural-Forms: \n"
 "Language: it\n"
 "X-Generator: Poedit 1.6.5\n"
+
+#. module: board_CEO
+#: model:ir.actions.act_window,name:board_CEO.ceo_closed_tasks
+#: model:ir.ui.menu,name:board_CEO.menu_closed_tasks
+msgid "All Finished tasks"
+msgstr "Tutte le attivita completate"
+
+#. module: board_CEO
+#: model:ir.actions.act_window,name:board_CEO.ceo_tasks
+#: model:ir.ui.menu,name:board_CEO.menu_all_tasks
+msgid "All unfinished tasks"
+msgstr "Tutte le attivita non completate"
 
 #. module: board_CEO
 #: view:board.board:0 model:ir.actions.act_window,name:board_CEO.ceo_analytic
@@ -51,15 +63,9 @@ msgid "Delegated tasks"
 msgstr "Attività delegate"
 
 #. module: board_CEO
-#: model:ir.actions.act_window,name:board_CEO.ceo_closed_tasks
-#: model:ir.ui.menu,name:board_CEO.menu_closed_tasks
-msgid "Finished tasks"
-msgstr "Attivita compiute"
-
-#. module: board_CEO
 #: model:ir.ui.menu,name:board_CEO.menu_ceo_issmenu
 msgid "Issues"
-msgstr "Questioni"
+msgstr "Problematiche"
 
 #. module: board_CEO
 #: model:ir.actions.act_window,name:board_CEO.ceo_my_delegated_tasks
@@ -140,8 +146,3 @@ msgstr "Progetti e analitica"
 #: model:ir.ui.menu,name:board_CEO.menu_ceo_taskmenu
 msgid "Tasks"
 msgstr "Attività"
-
-#. module: board_CEO
-#: model:ir.actions.act_window,name:board_CEO.ceo_unassigned_tasks
-msgid "Unassigned Tasks"
-msgstr "Attivita non assegnate"
