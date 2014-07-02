@@ -26,7 +26,7 @@
 
 Funcionalities:
 
-- Data import for Slovenia's Statistical Regions, Municipalities, zip codes
+- Slovenia's Statistical Regions, Municipalities, zip codes
 
 
 """,

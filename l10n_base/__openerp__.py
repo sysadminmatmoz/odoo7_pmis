@@ -43,6 +43,7 @@ Features:
     "update_xml": [
         'partner/partner_view.xml',
         "security/ir.model.access.csv",
+        'data/res.country.csv',
 #        'partner/data_it/res.region.csv',
 #        'partner/data_it/res.province.csv',
 #        'partner/data_it/res.city.csv',
